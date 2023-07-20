@@ -1,0 +1,359 @@
+* {
+  margin: auto 0;
+}
+
+body {
+  margin: auto;
+  width: 85%;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "header header header"
+    "main-title main-title main-title"
+    "Sedans Sedans Sedans"
+    "main-new main-new main-new"
+    "main-title main-title main-title"
+    "album album-1 album album-1 album album-1"
+    "album album-2 album album-2 album album-2"
+    "album album-3 album album-3 album album-3";
+}
+
+.header {
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  display: flex;
+  padding: 100px 0 10px 0;
+  place-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.log {
+  /* border: 2px solid salmon ; */
+}
+
+.navigation {
+  /* border: 2px solid salmon ; */
+}
+
+.navigation a {
+  /* border: 2px solid salmon ; */
+  font-size: 18px;
+  margin-left: 35px;
+  text-decoration: none;
+  color: hsl(236, 13%, 42%);
+}
+
+.navigation a:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+/* ====================section-main================= */
+
+.section-main {
+  /* border: 2px solid salmon ; */
+  grid-column: 1/ 3;
+  grid-row: 2/ 3;
+  height: 100%;
+}
+
+.img-main {
+  width: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  padding: 20px 0px 0px 0;
+}
+
+.main-title {
+  /* border: 2px solid salmon ; */
+  font-size: 50px;
+  font-weight: bold;
+  width: 90%;
+  padding: 0 40px 0 0;
+  /* padding:50px 0 50px 0; */
+}
+
+.main-content {
+  /* border: 2px solid salmon ; */
+  font-size: 17px;
+  width: 100%;
+  margin-bottom: 10px;
+  color: hsl(236, 13%, 42%);
+  padding: 0 90px 0px 0;
+}
+
+.main-content p {
+  margin-top: 10px;
+  line-height: 25px;
+}
+
+.main-content button {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding: 17px 30px;
+  border: 0;
+  margin: 50px 0px 0px 0px;
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+  cursor: pointer;
+}
+
+.main-content button:hover {
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+}
+/*=============== new ==============*/
+
+.main-new {
+  grid-column: 3/ 3;
+  grid-row: 2/ 3;
+  background-color: hsl(240, 100%, 5%);
+  margin: 0;
+  padding: 30px;
+  display: grid;
+}
+
+.main-new h1 {
+  color: hsl(35, 77%, 62%);
+  font-size: 45px;
+}
+
+.main-new h3 {
+  color: hsl(36, 100%, 99%);
+  font-size: 22px;
+  padding: 30px 0 0px 0;
+}
+
+.main-new h3:hover {
+  color: hsl(35, 77%, 62%);
+}
+
+.main-new p {
+  color: hsl(233, 8%, 79%);
+  font-size: 16px;
+  line-height: 30px;
+  padding: 0px 0 10px 0;
+}
+
+.main-new hr {
+}
+
+/* ================Album =============== */
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(3, 30% 70%);
+  padding: 5px;
+  font-size: 15px;
+}
+
+.album__artwork {
+  width: 100%;
+}
+
+.album__details {
+  margin-left: 20px;
+  font-size: 15px;
+  line-height: 29px;
+}
+
+.album__details h1 {
+  color: hsl(233, 8%, 79%);
+  margin-bottom: 10px;
+}
+
+.album__artist {
+  /* border: 2px solid salmon ; */
+  font-size: 18px;
+  font-weight: 800;
+  width: 100%;
+}
+
+.album__artist:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+.album__desc {
+  color: hsl(236, 13%, 42%);
+}
+
+.album-1 {
+  grid-column: 1/2;
+  grid-row: 3;
+}
+
+.album-2 {
+  grid-column: 2/3;
+  grid-row: 3;
+}
+
+.album-3 {
+  grid-column: 3/ 4;
+  grid-row: 3;
+}
+
+@media (max-width: 1011px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "header header header"
+      "section-main section-main section-main"
+      " album-1  main-new main-new"
+      " album-2  main-new  main-new"
+      " album-3  main-new main-new";
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  .section-main {
+    grid-area: section-main;
+  }
+
+  /* .main-title{
+    grid-area: main;
+  } */
+
+  .main-new {
+    grid-area: main-new;
+  }
+
+  .album-1 {
+    grid-area: album-1;
+  }
+
+  .album-2 {
+    grid-area: album-2;
+  }
+
+  .album-3 {
+    grid-area: album-3;
+  }
+
+  .album__artwork {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "header header header"
+      "section-main section-main section-main"
+      " main-new  main-new  main-new"
+      "album-1 album-1 album-1"
+      " album-2  album-2  album-2"
+      " album-3   album-3  album-3";
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  .section-main {
+    grid-area: section-main;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-title {
+    grid-area: main-title;
+    line-height: 60px;
+  }
+
+  .main-content p {
+    line-height: 30px;
+  }
+
+  .main-new {
+    grid-area: main-new;
+  }
+
+  .album-1 {
+    grid-area: album-1;
+  }
+
+  .album-2 {
+    grid-area: album-2;
+  }
+
+  .album-3 {
+    grid-area: album-3;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "header header header"
+      "section-main section-main section-main"
+      "main-title main-title main-title"
+      " main-content main-content main-content"
+      " main-new  main-new  main-new"
+      "album-1 album-1 album-1"
+      " album-2  album-2  album-2"
+      " album-3   album-3  album-3";
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  .section-main {
+    grid-area: section-main;
+  }
+  .main-content button:hover {
+    background-color: hsl(5, 85%, 63%);
+    color: hsl(36, 100%, 99%);
+  }
+
+  .main-title {
+    grid-area: main-title;
+  }
+
+  /* .main-content {
+    grid-area: main-content;
+  } */
+
+  .main-new {
+    grid-area: main-new;
+  }
+  .album-1 {
+    grid-area: album-1;
+  }
+
+  .album-2 {
+    grid-area: album-2;
+  }
+
+  .album-3 {
+    grid-area: album-3;
+  }
+}
